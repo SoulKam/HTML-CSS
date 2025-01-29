@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family: 'Manga';
+            src: url('fonts/animeace2_reg.otf') format('opentype'), url('fonts/animeace2_reg.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+
+            }
+
+            @font-face {
+                font-family: 'Sakurata';
+                src: url('fonts/SAKURATA.ttf') format('truetype');
+            /*
+                Tipos de format()
+                - opentype (otf)
+                - truetype (ttf)
+                - embedded-opentype
+                - truetype-aat (Apple Advanced Typography)
+                - svg
+            */
+        }
+        body{
+            font-family: 'Manga', Arial, Helvetica, sans-serif;
+        }
+        h1{
+            font-family: 'Sakurata', 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Título</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis molestiae dignissimos eaque eius? Obcaecati asperiores a voluptatum eos, dolorum pariatur commodi veniam nostrum cupiditate. Optio voluptates atque explicabo ad inventore.</p>
+</body>
+</html>
