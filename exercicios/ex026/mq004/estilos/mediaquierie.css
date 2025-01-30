@@ -2,47 +2,82 @@
 
 /* Todas as midias */
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+/* Typical Devices Breackpoints
+-------------------------------
+Pequenas telas até 640px 
+Celular de 640px até 768px
+Tablet de 768px até 1024
+Desktop de 1024 até 1280px
+Grandes telas acima de 1280px
+Tv
+*/
+
+@media print { /* IMPRESSÂO */
+    * {
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    body {
+        background-image: url(../imagens/back-print.jpg); /*desnecessário */
+    }
+
+    main {
+        border: 2px solid black;
+        width: 90vw;
+    }
+
+    main::after {
+        content: 'Essa impressão foi feita através do site www.soulkam.com';
+        text-decoration: overline;
+    }
+
+    main, h1{
+        text-shadow: none;
+        color: black;
+    }
+
+    img#phone {display: none;}
+    img#tablet {display: none;}
+    img#print {display: block;}
+    img#pc {display: none;}
+    img#tv {display: none;}
 }
 
-html {
-    height: 100vh;
-}
+@media screen and (min-width: 768px) and (max-width: 1024px) { /* TABLET */
 
 body {
-    background: black url(../imagens/back-phone.jpg) no-repeat;
-    background-size: cover;
-    background-position: center center;
+    background-image: url(../imagens/back-tablet.jpg);
 }
 
-main {
-    background-color: rgba(255, 255, 255, 0.808);
-    width: 90vw;
-    margin: auto;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-h1 {
-    text-align: center;
-    color: white;
-    font-size: 2em;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.521);
-}
-
-img {
-    display: block;
-    margin: auto;
-}
-
-img#phone {display: block;}
-img#tablet {display: none;}
+img#phone {display: none;}
+img#tablet {display: block;}
 img#print {display: none;}
 img#pc {display: none;}
 img#tv {display: none;}
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) { /*DESKTOP */
+
+body {
+    background: url(../imagens/back-pc.jpg);
+}
+
+img#phone {display: none;}
+img#tablet {display: none;}
+img#print {display: none;}
+img#pc {display: block;}
+img#tv {display: none;}
+}
+
+@media screen and (min-width: 1280px) { /*GRANDES TELAS*/
+
+body {
+    background-image: url(../imagens/back-tv.jpg);
+}
+
+img#phone {display: none;}
+img#tablet {display: none;}
+img#print {display: none;}
+img#pc {display: none;}
+img#tv {display: block;}
+}
